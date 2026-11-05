@@ -1,0 +1,116 @@
+
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>AI Resume Screening Dashboard</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+
+<div class="container">
+
+    <h1>AI Resume Screening Dashboard</h1>
+
+    <div class="card">
+        <h2>Candidate Details</h2>
+        <p><strong>Name:</strong> {{ resume.name }}</p>
+        <p><strong>Email:</strong> {{ resume.email }}</p>
+        <p><strong>Phone:</strong> {{ resume.phone }}</p>
+    </div>
+
+    <h2>Job Recommendations</h2>
+    <input type="text" id="jobSearch" placeholder="Search jobs..." onkeyup="applyFilters()">
+    
+    <select id="matchFilter" onchange="applyFilters()">
+        <option value="0">All Jobs</option>
+        <option value="80">80% and Above</option>
+        <option value="90">90% and Above</option>
+        <option value="100">100% Match</option>
+    </select>
+
+
+    {% for item in recommendations %}
+
+        <div class="card job-card">
+
+            <h3>{{ item.job.title }}</h3>
+
+            <p><strong>Company:</strong> {{ item.job.company }}</p>
+            <p><strong>Location:</strong> {{ item.job.location }}</p>
+
+            <p class="match">
+                {{ item.match_percentage }}% Match
+            </p>
+
+            <progress value="{{ item.match_percentage }}" max="100"></progress>
+
+            <h3>Matched Skills</h3>
+            <ul class="matched">
+                {% for skill in item.matched_skills %}
+                    <li>{{ skill }}</li>
+                {% empty %}
+                    <li>No matching skills found</li>
+                {% endfor %}
+            </ul>
+
+            <h3>Missing Skills</h3>
+            <ul class="missing">
+                {% for skill in item.missing_skills %}
+                    <li>{{ skill }}</li>
+                {% empty %}
+                    <li>No missing skills</li>
+                {% endfor %}
+            </ul>
+
+        </div>
+
+    {% empty %}
+        <p>No jobs available.</p>
+    {% endfor %}
+
+</div>
+
+
+
+<script>
+    function applyFilters() {
+
+        let input = document.getElementById("jobSearch").value.toLowerCase();
+
+        let selectedMatch = Number(
+            document.getElementById("matchFilter").value
+        );
+
+        let jobCards = document.querySelectorAll(".job-card");
+
+        jobCards.forEach(function(card) {
+
+            let jobTitle = card.querySelector("h3").innerText.toLowerCase();
+
+            let matchText = card.querySelector(".match").innerText;
+
+            let matchPercentage = Number(
+                matchText.replace("% Match", "").trim()
+            );
+
+            let titleMatch = jobTitle.includes(input);
+
+            let percentageMatch = matchPercentage >= selectedMatch;
+
+            if (titleMatch && percentageMatch) {
+                card.style.display = "block";
+            } else {
+                card.style.display = "none";
+            }
+
+        });
+
+    }
+
+</script>
+
+
+
+</body>
+</html>

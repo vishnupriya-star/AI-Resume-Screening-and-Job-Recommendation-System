@@ -1,0 +1,44 @@
+.candidate-details {
+  background: #ffffff;
+  padding: 25px;
+  margin: 25px 0;
+  border-radius: 16px;
+  box-shadow: 0 4px 15px rgba(30, 30, 80, 0.07);
+  border-top: 4px solid #8b5cf6;
+}
+
+.candidate-details h2 {
+  color: #19164d;
+  font-size: 22px;
+  margin-bottom: 22px;
+}
+
+.candidate-details p {
+  color: #555;
+  font-size: 14px;
+  line-height: 1.7;
+  margin: 12px 0;
+}
+
+.candidate-details p strong {
+  color: #29246b;
+  display: inline-block;
+  min-width: 100px;
+}
+
+.candidate-details h3 {
+  color: #29246b;
+  font-size: 17px;
+  margin-top: 25px;
+  margin-bottom: 12px;
+}
+
+@media (max-width: 600px) {
+  .candidate-details {
+    padding: 18px;
+  }
+
+  .candidate-details p strong {
+    min-width: 85px;
+  }
+}

@@ -1,0 +1,63 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f5f3ff;
+}
+
+.dashboard {
+  min-height: 100vh;
+}
+
+.main-content {
+  margin-left: 260px;
+  min-height: 100vh;
+  padding: 0;
+  width: calc(100% - 260px);
+
+}
+
+.dashboard-content {
+  padding: 30px;
+}
+
+.dashboard-content h1 {
+  color: #15134d;
+  font-size: 28px;
+}
+
+.dashboard-content p {
+  color: #777;
+  margin-top: 8px;
+}
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .main-content {
+    margin-left: 75px;
+    width: calc(100% - 75px);
+  }
+
+  .dashboard-content {
+    padding: 15px;
+  }
+
+  .dashboard-content h1 {
+    font-size: 22px;
+  }
+}
+
+/* Tablet Responsive */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .main-content {
+    margin-left: 260px;
+    width: calc(100% - 260px);
+  }
+
+  .dashboard-content {
+    padding: 20px;
+  }
+}

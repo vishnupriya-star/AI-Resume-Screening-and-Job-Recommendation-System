@@ -1,0 +1,72 @@
+
+.job-recommendations {
+  background: #ffffff;
+  padding: 25px;
+  margin: 25px 0;
+  border-radius: 16px;
+  box-shadow: 0 4px 15px rgba(30, 30, 80, 0.07);
+}
+
+.job-recommendations h2 {
+  color: #19164d;
+  font-size: 22px;
+  margin-bottom: 20px;
+}
+
+.job-recommendations input {
+  width: 100%;
+  padding: 13px 16px;
+  border: 1px solid #ddd6fe;
+  border-radius: 10px;
+  outline: none;
+  font-size: 14px;
+  margin-bottom: 22px;
+}
+
+.job-recommendations input:focus {
+  border-color: #8b5cf6;
+  box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.1);
+}
+
+.job-card {
+  padding: 20px;
+  margin-bottom: 18px;
+  border: 1px solid #eeeaff;
+  border-left: 5px solid #8b5cf6;
+  border-radius: 12px;
+  background: #faf9ff;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.job-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(30, 30, 80, 0.08);
+}
+
+.job-card h3 {
+  color: #29246b;
+  font-size: 18px;
+  margin-bottom: 8px;
+}
+
+.job-card p {
+  color: #666;
+  font-size: 14px;
+  line-height: 1.6;
+  margin: 7px 0;
+}
+
+.job-card p strong {
+  color: #16a34a;
+  font-size: 16px;
+}
+
+@media (max-width: 600px) {
+  .job-recommendations {
+    padding: 16px;
+  }
+
+  .job-card {
+    padding: 15px;
+  }
+}
