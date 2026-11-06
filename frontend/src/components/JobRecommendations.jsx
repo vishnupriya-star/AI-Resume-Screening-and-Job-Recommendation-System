@@ -1,6 +1,7 @@
 
 import { useState } from "react"
 import "./JobRecommendations.css"
+import addressIcon from "../assets/address.png"
 
 function JobRecommendations({ jobs, resumes, aiRecommendations }) {
   const [search, setSearch] = useState("")
@@ -65,7 +66,9 @@ function JobRecommendations({ jobs, resumes, aiRecommendations }) {
             <div className="job-card" key={job.id}>
               <h3>{job.title}</h3>
               <p>{job.company}</p>
-              <p>📍 {job.location}</p>
+              <p className="job-location">
+                <img src={addressIcon} alt="Address" /> {job.location}
+              </p>
               <p>Required Skills: {job.required_skills}</p>
 
               <p>

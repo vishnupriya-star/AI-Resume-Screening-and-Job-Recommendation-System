@@ -1,116 +1,125 @@
+
+/* Header */
 .header {
-  height: 85px;
+  width: 100%;
+  min-height: 85px;
+  padding: 12px 30px;
   background: #ffffff;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 15px 30px;
-  border-bottom: 1px solid #e5e0ff;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-  width:100%;
-  margin:0;
-  border-radius: 0;
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.06);
+  gap: 15px;
 }
 
+/* Header Title */
 .header-title {
-  display: flex;
-  align-items: center;
-  gap: 20px;
-  flex: 1;
-  min-width: 0;
-}
-
-.header-icon {
-  font-size: 38px;
-}
-
-.header-title h2 {
- color: #15134d;
-  font-size: 23px;
-  font-weight: bold;
-  white-space: nowrap;
-}
-
-.header-profile {
   display: flex;
   align-items: center;
   gap: 12px;
 }
 
-.profile-icon {
-  width: 48px;
-  height: 48px;
-  background: #eee7ff;
-  color: #6525d5;
-  border-radius: 50%;
+.header-icon {
+  width: 55px;
+  height: 55px;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 27px;
+  flex-shrink: 0;
+}
+
+.header-icon img {
+  width: 50px;
+  height: 50px;
+  object-fit: contain;
+}
+
+.header-title h2 {
+  color: #15134d;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+/* Profile Section */
+.header-profile {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-shrink: 0;
+}
+
+.profile-icon {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  background: #f0eaff;
+  border: 2px solid #7025e8;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.profile-icon img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .header-profile p {
-  color: #555;
-  font-size: 13px;
+  color: #777;
+  font-size: 12px;
+  margin: 0;
 }
 
 .header-profile h3 {
   color: #15134d;
   font-size: 15px;
+  margin-top: 3px;
 }
 
 .dropdown {
-  font-size: 25px;
-  margin-left: 10px;
+  color: #7025e8;
+  font-size: 22px;
+  cursor: pointer;
+  margin-left: 5px;
 }
+
+/* Mobile Responsive */
 @media (max-width: 768px) {
   .header {
-    height: auto;
-    min-height: 75px;
-    padding: 12px;
-    flex-wrap: wrap;
-    gap: 12px;
-  }
-
-  .header-title {
-    gap: 8px;
+    padding: 10px 12px;
+    min-height: 70px;
   }
 
   .header-icon {
-    font-size: 25px;
+    width: 40px;
+    height: 40px;
+  }
+
+  .header-icon img {
+    width: 38px;
+    height: 38px;
   }
 
   .header-title h2 {
-    font-size: 14px;
-    white-space: normal;
-  }
-
-  .header-profile {
-    gap: 8px;
+    font-size: 13px;
   }
 
   .profile-icon {
     width: 35px;
     height: 35px;
-    font-size: 20px;
   }
 
-  .header-profile p {
-    font-size: 11px;
+  .header-profile {
+    gap: 6px;
   }
 
   .header-profile h3 {
-    font-size: 13px;
-  }
-}
-
-@media (min-width: 769px) and (max-width: 1024px) {
-  .header {
-    padding: 15px 18px;
+    font-size: 12px;
   }
 
-  .header-title h2 {
-    font-size: 18px;
-    white-space: normal;
+  .header-profile p {
+    font-size: 10px;
   }
 }
